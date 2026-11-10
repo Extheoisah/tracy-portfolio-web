@@ -136,6 +136,19 @@
   @media (prefers-reduced-motion: reduce) {
     .preview-card img { transform: none; transition: none; }
   }
+  html:has(.preview-viewer[open]) { overflow: hidden; }
+  .preview-viewer {
+    @apply fixed inset-0 m-0 size-full max-h-none max-w-none bg-transparent text-white;
+    padding: max(1rem, env(safe-area-inset-top)) max(.5rem, env(safe-area-inset-right))
+      max(1rem, env(safe-area-inset-bottom)) max(.5rem, env(safe-area-inset-left));
+  }
+  .preview-viewer[open] { @apply grid grid-rows-[auto_minmax(0,1fr)] gap-3; }
+  .preview-viewer::backdrop { background: rgb(12 21 18 / .94); }
+  .preview-viewer-bar { @apply flex items-center justify-between gap-3 px-2; }
+  .preview-viewer-bar h2 { @apply font-action text-base font-medium; }
+  .preview-viewer-bar button { @apply shrink-0; }
+  .preview-viewer-bar button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+  .preview-viewer img { @apply size-full min-h-0 object-contain; }
   .other-work { @apply py-12 md:py-[60px]; }
   .other-intro { @apply mt-5 max-w-[426px] text-base/6 text-muted; }
   .gallery { @apply mt-10 grid gap-8 md:mt-[90px] md:grid-cols-[634fr_640fr] md:gap-[38px]; }
