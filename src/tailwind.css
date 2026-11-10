@@ -60,7 +60,7 @@
   .client-logos { @apply flex-wrap gap-4 sm:gap-8; }
   .work { @apply pt-8 md:pt-12; }
   .work-banner { @apply sticky top-0 z-5 bg-paper pt-4 pb-3; }
-  .work :is(.feature-title, .case-link, .preview-card) { scroll-margin-block-start: 7rem; }
+  .work :is(.feature-title, .case-link, .preview-card, .facts a) { scroll-margin-block-start: 7rem; }
   .section-title {
     @apply font-display font-medium tracking-[-.008em];
     font-size: clamp(1.875rem, 3.3vw, var(--text-section));
